@@ -1,6 +1,7 @@
 package com.shahin.githubprofile.di
 
 import android.app.Application
+import com.shahin.data.di.DataModule
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -11,7 +12,7 @@ import javax.inject.Singleton
         AppModule::class,
         SubComponentModule::class,
         ViewModelModule::class,
-        //DataModule::class,
+        DataModule::class,
     ]
 )
 interface ApplicationGraph {
