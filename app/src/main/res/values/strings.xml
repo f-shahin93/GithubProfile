@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GithubProfile</string>
+      <string name="title_buildsrc">buildSrc</string>
+</resources>
