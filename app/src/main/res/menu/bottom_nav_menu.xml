@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/profile_menu"
+        android:title="@string/title_profile"
+        android:icon="@android:drawable/ic_dialog_alert" />
+
+    <item
+        android:id="@+id/repo_list_menu"
+        android:title="@string/title_repo_list"
+        android:icon="@android:drawable/ic_lock_idle_alarm"/>
+
+</menu>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/navigation_profile">
+
+    <fragment
+        android:id="@+id/navigation_repo_list"
+        android:name="com.shahin.githubprofile.ui.repolist.RepositoryListFragment"
+        tools:layout="@layout/fragment_repository_list"
+        android:label="@string/title_repo_list"/>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.shahin.githubprofile.ui.profile.ProfileFragment"
+        tools:layout="@layout/fragment_profile"
+        android:label="@string/title_profile"/>
+
+</navigation>
