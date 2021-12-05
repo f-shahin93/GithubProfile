@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">GithubProfile</string>
     <string name="title_profile">Profile</string>
+    <string name="title_profile_fragment">ProfileFragment</string>
     <string name="title_repo_list">RepositoryList</string>
+    <string name="title_repo_list_fragment">RepositoryListFragment</string>
     <string name="label_github_address">Your Github Account Address :</string>
 </resources>

@@ -3,9 +3,8 @@ package com.shahin.githubprofile.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
+import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.shahin.githubprofile.R
 import com.shahin.githubprofile.app.MainApplication
@@ -29,19 +28,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun initNavController() {
         val navView: BottomNavigationView = findViewById(R.id.bottom_nav_view)
-        navController = findNavController(R.id.nav_host_fragment)
-
-        navController.graph = navController.navInflater.inflate(R.navigation.navigation_graph)
-
-        navView.setupWithNavController(navController)
-        navView.setOnItemSelectedListener {
-            if (navController.currentDestination?.id == it.itemId) {
-                return@setOnItemSelectedListener false
-            } else {
-                NavigationUI.onNavDestinationSelected(it, navController)
-                return@setOnItemSelectedListener true
-            }
-        }
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment)
+        NavigationUI.setupWithNavController(navView, navController)
     }
 
 }
