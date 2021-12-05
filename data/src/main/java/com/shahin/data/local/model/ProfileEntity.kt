@@ -6,8 +6,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "profile")
 data class ProfileEntity(
-    @PrimaryKey(autoGenerate = true)
-    val id: Long = 0,
+    @PrimaryKey
+    val id: Long = 1,
     @ColumnInfo(name = "login")
     val login: String?,
     @ColumnInfo(name = "avatarUrl")

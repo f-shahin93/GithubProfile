@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_small"
             android:padding="@dimen/padding_tiny"
-            android:text='@{"Username : " + name}'
+            android:text='@{"Username : " + name ?? "-"}'
             android:textStyle="bold"
             android:textAppearance="?textAppearanceBody2"
             app:layout_constraintBottom_toBottomOf="@id/cv_avatar"
@@ -92,7 +92,7 @@
             android:layout_marginStart="@dimen/margin_xlarge"
             android:layout_marginTop="@dimen/margin_small"
             android:padding="@dimen/padding_tiny"
-            android:text="@{url}"
+            android:text='@{url ?? "-"}'
             android:textColor="@color/purple_500"
             android:textAppearance="?textAppearanceBody2"
             app:layout_constraintEnd_toEndOf="parent"
