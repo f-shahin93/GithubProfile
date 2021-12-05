@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <dimen name="margin_tiny">4</dimen>
     <dimen name="margin_small">8dp</dimen>
     <dimen name="margin_normal">12dp</dimen>
     <dimen name="margin_large">16dp</dimen>
     <dimen name="margin_xlarge">24dp</dimen>
+    <dimen name="margin_42">42dp</dimen>
 
     <dimen name="avatar_normal_size">150dp</dimen>
 
+    <dimen name="corner_radius_small">8dp</dimen>
     <dimen name="corner_radius">16dp</dimen>
 
     <dimen name="padding_tiny">4dp</dimen>
-    <dimen name="margin_42">42dp</dimen>
 
 </resources>
