@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.shahin.data.model.RepoItem
 import com.shahin.githubprofile.databinding.ItemRepoListBinding
+import com.shahin.githubprofile.ui.utils.dateFormatter
+import java.util.*
 
 class RepoAdapter(val lifecycleOwner: LifecycleOwner) :
     ListAdapter<RepoItem, RepoAdapter.RepoViewHolder>(RepoListDiffUtilCallback()) {
@@ -32,7 +34,7 @@ class RepoAdapter(val lifecycleOwner: LifecycleOwner) :
             binding.run {
                 title = item.name
                 description = item.description
-                createdAt = item.createdAt
+                createdAt = dateFormatter(item.createdAt)
             }
         }
     }
