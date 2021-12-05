@@ -1,5 +1,7 @@
 package com.shahin.data.di
 
+import com.shahin.data.network.services.DefaultGithubService
+import com.shahin.data.network.services.GithubService
 import com.shahin.data.repository.DefaultGithubRepository
 import com.shahin.data.repository.GithubRepository
 import dagger.Binds
@@ -12,5 +14,9 @@ abstract class DataModule {
     @Binds
     @Singleton
     abstract fun bindGithubRepository(repository: DefaultGithubRepository): GithubRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindGithubService(service: DefaultGithubService): GithubService
 
 }

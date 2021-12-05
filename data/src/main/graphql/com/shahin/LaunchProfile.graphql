@@ -1,0 +1,16 @@
+query LaunchProfile{
+    repositoryOwner(login: "f-shahin93"){
+        login
+        avatarUrl
+        url
+    }
+}
+
+#query FindQuery($owner:String!,$name:String!){
+#    repository(owner:$owner, name:$name) {
+#        name
+#        description
+#        forkCount
+#        url
+#    }
+#}

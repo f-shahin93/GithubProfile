@@ -1,36 +1,33 @@
 package com.shahin.data.di
 
-import com.shahin.data.network.services.GithubService
+import com.apollographql.apollo.ApolloClient
+import com.shahin.data.network.interceptors.AuthorizationInterceptor
 import dagger.Module
 import dagger.Provides
-import okhttp3.OkHttpClient
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import okhttp3.*
+import okhttp3.logging.HttpLoggingInterceptor
 import javax.inject.Named
 import javax.inject.Singleton
 
-@Module
+@Module(includes = [UrlModule::class])
 class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(): OkHttpClient =
-        OkHttpClient.Builder().build()
-
-
-    @Singleton
-    @Provides
-    fun provideRetrofit(client: OkHttpClient, @Named("baseUrl") baseUrl: String): Retrofit =
-        Retrofit.Builder()
-            .baseUrl(baseUrl)
-            .client(client)
-            .addConverterFactory(GsonConverterFactory.create())
+    fun provideOkHttpClient(authorizationInterceptor: AuthorizationInterceptor): OkHttpClient =
+        OkHttpClient.Builder()
+            .addInterceptor(authorizationInterceptor)
+            .addInterceptor(HttpLoggingInterceptor().apply {
+                level = HttpLoggingInterceptor.Level.BODY
+            })
             .build()
 
     @Provides
     @Singleton
-    fun provideGithubService(retrofit: Retrofit): GithubService {
-        return retrofit.create(GithubService::class.java)
-    }
+    fun provideApolloClient(client: OkHttpClient, @Named("baseUrl") baseUrl: String): ApolloClient =
+        ApolloClient.builder()
+            .okHttpClient(client)
+            .serverUrl(baseUrl)
+            .build()
 
 }

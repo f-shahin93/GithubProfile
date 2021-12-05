@@ -1,0 +1,10 @@
+query LaunchRepoList($count:Int!) {
+    viewer {
+        name
+        repositories(last: $count) {
+            nodes {
+                name
+            }
+        }
+    }
+}
