@@ -3,7 +3,10 @@ query LaunchRepoList($count:Int!) {
         name
         repositories(last: $count) {
             nodes {
+                id
                 name
+                description
+                createdAt
             }
         }
     }

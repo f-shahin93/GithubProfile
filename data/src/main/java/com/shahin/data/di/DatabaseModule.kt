@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.shahin.data.local.MainDatabase
 import com.shahin.data.local.dao.ProfileDao
+import com.shahin.data.local.dao.RepositoryListDao
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -25,5 +26,10 @@ class DatabaseModule {
     @Singleton
     fun provideProfileDao(generalDatabase: MainDatabase): ProfileDao =
         generalDatabase.profileDao
+
+    @Provides
+    @Singleton
+    fun provideRepositoryListDao(generalDatabase: MainDatabase): RepositoryListDao =
+        generalDatabase.repositoryListDao
 
 }

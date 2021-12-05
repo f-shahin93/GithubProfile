@@ -23,6 +23,6 @@ class DefaultGithubService @Inject constructor(
         apolloClient.query(LaunchProfileQuery()).await()
 
     override suspend fun getRepoList(): Response<LaunchRepoListQuery.Data> =
-        apolloClient.query(LaunchRepoListQuery(2)).await()
+        apolloClient.query(LaunchRepoListQuery(5)).await()
 
 }
