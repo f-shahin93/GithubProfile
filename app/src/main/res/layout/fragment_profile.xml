@@ -20,7 +20,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#F8F6F6">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
@@ -44,10 +45,10 @@
             android:layout_height="@dimen/avatar_normal_size"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/margin_42"
-            android:layout_marginHorizontal="@dimen/margin_normal"
             app:cardCornerRadius="@dimen/corner_radius"
             app:layout_constraintTop_toBottomOf="@id/appbar"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             tools:context=".ui.profile.ProfileFragment">
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -61,44 +62,57 @@
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:gravity="center"
             android:padding="@dimen/padding_tiny"
             android:text='@{"Username : " + name ?? "-"}'
             android:textStyle="bold"
             android:textAppearance="?textAppearanceBody2"
-            app:layout_constraintBottom_toBottomOf="@id/cv_avatar"
-            app:layout_constraintStart_toEndOf="@id/cv_avatar"
-            app:layout_constraintTop_toTopOf="@id/cv_avatar"
+            app:layout_constraintEnd_toEndOf="@id/cv_avatar"
+            app:layout_constraintStart_toStartOf="@id/cv_avatar"
+            app:layout_constraintTop_toBottomOf="@id/cv_avatar"
             tools:text="fateme shahin" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_title_url"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_normal"
             android:layout_marginTop="@dimen/margin_large"
-            android:padding="@dimen/padding_tiny"
-            android:textStyle="bold"
-            android:text="@string/label_github_address"
-            android:textAppearance="?textAppearanceBody2"
+            android:layout_marginHorizontal="@dimen/margin_normal"
+            app:cardCornerRadius="@dimen/corner_radius_small"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cv_avatar"/>
+            app:layout_constraintTop_toBottomOf="@id/tv_name">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_url"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_xlarge"
-            android:layout_marginTop="@dimen/margin_small"
-            android:padding="@dimen/padding_tiny"
-            android:text='@{url ?? "-"}'
-            android:textColor="@color/purple_500"
-            android:textAppearance="?textAppearanceBody2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/tv_title_url"
-            app:layout_constraintTop_toBottomOf="@id/tv_title_url"
-            tools:text="http//" />
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/margin_normal"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_title_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="@string/label_github_address"
+                    android:textAppearance="?textAppearanceBody2" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_large"
+                    android:padding="@dimen/padding_tiny"
+                    android:text='@{url ?? "-"}'
+                    android:textColor="@color/purple_500"
+                    android:textAppearance="?textAppearanceBody2"
+                    tools:text="http//" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

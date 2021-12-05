@@ -6,7 +6,7 @@
     <dimen name="margin_normal">12dp</dimen>
     <dimen name="margin_large">16dp</dimen>
     <dimen name="margin_xlarge">24dp</dimen>
-    <dimen name="margin_42">42dp</dimen>
+    <dimen name="margin_42">36dp</dimen>
 
     <dimen name="avatar_normal_size">150dp</dimen>
 
